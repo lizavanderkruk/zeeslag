@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <style>
+            td{
+                border: 2px solid black;
+                margin: 10px;
+                padding: 10px;
+            }
+            td#weglaten{
+                border: solid white;
+            }
+                
+        </style>
+        <script>
+            var zeeslag = [0,0,1,1,1,0,0,
+                           1,1,0,0,0,0,1,
+                           0,0,0,1,0,0,1];
+            function turn(x){
+                    if(zeeslag[x] == 0){
+                        //alert("zee");
+                        document.getElementById(x).style.backgroundColor = "blue";
+                        HitWater();
+                    }
+                    else {
+                        alert("Boot geraakt!!");
+                        document.getElementById(x).style.backgroundColor = "red";
+                        HitBoat(); 
+                    } 
+            } 
+            function HitBoat(){
+                var count = 0;
+                for (b=0; b<zeeslag.length; b++){
+                    if(zeeslag[b] == 1)
+                    count++; 
+                    console.log("boot");
+                }
+            }
+            function HitWater(){
+                var count=0;
+                for (w=0; w<zeeslag.length; w++){
+                    if(zeeslag[w] == 0)
+                    count++;
+                    console.log("water");
+                }
+            }
+            
+                // opdracht: alle boten geraakt, gewonnen
+                // hoe vaak raak geschoten, hoe vaak gemist
+                // 2x op dezelfde plaats, je hebt 2x geschoten!
+                // refresh overleven
+            
+
+        </script>
+        
+
+    </head>
+    <body>
+        <table>
+            <thead>
+                <td id="weglaten"></td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+                <td>G</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td id=0 onclick="turn(id)"></td>
+                    <td id=1 onclick="turn(id)"></td>
+                    <td id=2 onclick="turn(id)"></td>
+                    <td id=3 onclick="turn(id)"></td>
+                    <td id=4 onclick="turn(id)"></td>
+                    <td id=5 onclick="turn(id)"></td>
+                    <td id=6 onclick="turn(id)"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id=7 onclick="turn(id)"></td>
+                    <td id=8 onclick="turn(id)"></td>
+                    <td id=9 onclick="turn(id)"></td>
+                    <td id=10 onclick="turn(id)"></td>
+                    <td id=11 onclick="turn(id)"></td>
+                    <td id=12 onclick="turn(id)"></td>
+                    <td id=13 onclick="turn(id)"></td>
+                </tr>
+                    <td>3</td>
+                    <td id=14 onclick="turn(id)"></td>
+                    <td id=15 onclick="turn(id)"></td>
+                    <td id=16 onclick="turn(id)"></td>
+                    <td id=17 onclick="turn(id)"></td>
+                    <td id=18 onclick="turn(id)"></td>
+                    <td id=19 onclick="turn(id)"></td>
+                    <td id=20 onclick="turn(id)"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
